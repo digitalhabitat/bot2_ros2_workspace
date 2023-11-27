@@ -14,9 +14,15 @@
 		"--security-opt=apparmor:unconfined",
 		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
 		"--volume=/mnt/wslg:/mnt/wslg",
-		"--ipc=host"
+		"--ipc=host",
 		// uncomment to use intel iGPU
 		// "--device=/dev/dri"
+		// MTM: enable privileged to access joystick
+		"--privileged"
+	],
+	"mounts": [
+		// MTM: mount /dev to acess joystick and other devices
+		"source=/dev/,target=/dev/,type=bind"
 	],
 	"containerEnv": {
 		"DISPLAY": "${localEnv:DISPLAY}", // Needed for GUI try ":0" for windows
