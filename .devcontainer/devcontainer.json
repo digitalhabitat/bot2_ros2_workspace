@@ -17,7 +17,7 @@
 		"--ipc=host",
 		// uncomment to use intel iGPU
 		// "--device=/dev/dri"
-		// MTM: enable privileged to access joystick
+		// MTM: enable privileged to access the USB host controllers
 		"--privileged"
 	],
 	"mounts": [

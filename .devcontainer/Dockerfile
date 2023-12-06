@@ -15,7 +15,7 @@ FROM althack/ros2:humble-dev
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
    && apt-get -y install --no-install-recommends \
-   # MTM: joystick test
+   # MTM: joystick teleop test
    joystick jstest-gtk evtest \ 
    ros-humble-joy \
    ros-humble-teleop-twist-joy\
@@ -26,6 +26,9 @@ RUN apt-get update \
    && apt-get clean -y \
    && rm -rf /var/lib/apt/lists/*
 ENV DEBIAN_FRONTEND=dialog
+
+# MTM: enable blink1 executable blink1-tool
+ENV PATH=$PATH:/workspaces/bot2_ros2_workspace/src/blink1-tool
 
 # Set up auto-source of workspace for ros user
 ARG WORKSPACE
