@@ -8,10 +8,6 @@ repositories:
     type: git
     url: https://github.com/ros2/examples.git
     version: humble
-  blink1-tool:
-    type: git
-    url: https://github.com/todbot/blink1-tool.git
-    version: main
   blink1_ros2:
     type: git
     url: https://github.com/digitalhabitat/blink1_ros2.git
