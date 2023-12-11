@@ -28,7 +28,7 @@ RUN apt-get update \
 ENV DEBIAN_FRONTEND=dialog
 
 # MTM: enable blink1 executable blink1-tool
-ENV PATH=$PATH:/workspaces/bot2_ros2_workspace/src/blink1-tool
+ENV PATH=$PATH:/workspaces/bot2_ros2_workspace/src2/blink1-tool
 
 # Set up auto-source of workspace for ros user
 ARG WORKSPACE

@@ -3,7 +3,7 @@ import os
 import subprocess
 import yaml
 
-prefix="src"
+# prefix="src"
 
 def add_git_submodule(repo_name, repo_url, repo_version):
     subprocess.call(['git', 'submodule', 'add', '-b', repo_version, repo_url, repo_name])
@@ -15,7 +15,7 @@ def is_submodule(repo_name):
     except subprocess.CalledProcessError:
         return False 
 
-def parse_repos_file(file_path):
+def parse_repos_file(file_path, prefix):
     with open(file_path, 'r') as file:
         repos_data = yaml.safe_load(file)
         repositories = repos_data['repositories']
@@ -35,4 +35,11 @@ repos_files = glob.glob('src/**/*.repos', recursive=True)
 
 # Process each .repos file
 for repos_file in repos_files:
-    parse_repos_file(repos_file)
+    parse_repos_file(repos_file, "src")
+
+# Find .repos files within the src directory
+repos_files = glob.glob('src2/**/*.repos', recursive=True)
+
+# Process each .repos file
+for repos_file in repos_files:
+    parse_repos_file(repos_file, "src2")

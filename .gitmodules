@@ -2,11 +2,11 @@
 	path = src/examples
 	url = https://github.com/ros2/examples.git
 	branch = humble
-[submodule "src/blink1-tool"]
-	path = src/blink1-tool
-	url = https://github.com/todbot/blink1-tool.git
-	branch = main
 [submodule "src/blink1_ros2"]
 	path = src/blink1_ros2
 	url = https://github.com/digitalhabitat/blink1_ros2.git
 	branch = humble-dev
+[submodule "src2/blink1-tool"]
+	path = src2/blink1-tool
+	url = https://github.com/todbot/blink1-tool.git
+	branch = main
