@@ -20,7 +20,8 @@ RUN apt-get update \
    ros-humble-joy \
    ros-humble-teleop-twist-joy\
    ros-humble-turtlesim \
-   #
+   # MTM: dev tools
+    ros-humble-rqt-graph \
    # Clean up
    && apt-get autoremove -y \
    && apt-get clean -y \
