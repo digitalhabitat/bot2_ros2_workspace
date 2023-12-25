@@ -3,8 +3,9 @@ set -e
 
 # Set the default build type
 BUILD_TYPE=RelWithDebInfo
-echo "=== Starting build.sh ==="
-echo "$(pwd)"
+echo -e "=== Starting build.sh ==="
+echo "Working directory: $(pwd)"
+
 colcon build \
         --base-path "./src" \
         --merge-install \
