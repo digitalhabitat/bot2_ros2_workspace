@@ -2,6 +2,8 @@
 # See https://github.com/dirk-thomas/vcstool
 ############ 
 # Example:
+#
+# Note: Use ssh for repos you plan on pushing updates to
 ############
 repositories:
   examples:
@@ -10,5 +12,5 @@ repositories:
     version: humble
   blink1_ros2:
     type: git
-    url: https://github.com/digitalhabitat/blink1_ros2.git
+    url: git@github.com:digitalhabitat/blink1_ros2.git
     version: humble-dev
