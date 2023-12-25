@@ -205,7 +205,7 @@
             "label": "import from workspace file",
             "detail": "Use vcs to import modules specified by a workspace/rosinstall file.",
             "type": "shell",
-            "command": "vcs import < src/ros2.repos src; vcs import < src2/src2.repos src2",
+            "command": "vcs import src < src/ros2.repos; vcs import src2 < src2/src2.repos",
             "problemMatcher": []
         },
         {
