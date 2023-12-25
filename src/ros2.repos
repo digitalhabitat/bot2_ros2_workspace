@@ -12,5 +12,5 @@ repositories:
     version: humble
   blink1_ros2:
     type: git
-    url: git@github.com:digitalhabitat/blink1_ros2.git
+    url: https://github.com/digitalhabitat/blink1_ros2.git
     version: humble-dev
