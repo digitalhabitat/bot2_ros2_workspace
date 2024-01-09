@@ -1,0 +1,10 @@
+# For other config examples see:
+# https://github.com/ros-drivers/nmea_navsat_driver/tree/ros2/config
+# `stty -F /dev/emlid_rtk`
+nmea_navsat_driver:
+  ros__parameters:
+    port: "/dev/emlid_rtk"
+    baud: 115200
+    frame_id: "gps"
+    time_ref_source: "gps"
+    useRMC: False

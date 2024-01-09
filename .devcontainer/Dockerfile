@@ -20,6 +20,10 @@ RUN apt-get update \
    ros-humble-joy \
    ros-humble-teleop-twist-joy\
    ros-humble-turtlesim \
+   # MTM: RTK GNSS NTRIP Client Node (RTKLIB str2str)
+   ros-humble-ntrip-client \
+   # MTM: RTK GNSS Reciever Device Node
+   ros-humble-nmea-navsat-driver \
    # MTM: dev tools
     ros-humble-rqt-graph \
    # Clean up

@@ -1,0 +1,20 @@
+# Produced with `ros2 param dump /ntrip_client/ntrip_client_node`
+# NOTE: credentials have be omitted with `...`
+ntrip_client_node:
+  ros__parameters:
+#    authenticate: true
+    ca_cert: None
+    cert: None
+#    host: '...'
+    key: None
+#    mountpoint: '...'
+    ntrip_version: None
+#    password: '...'
+#    port: ...
+    reconnect_attempt_max: 10
+    reconnect_attempt_wait_seconds: 5
+    rtcm_frame_id: odom
+    rtcm_timeout_seconds: 4
+    ssl: false
+    use_sim_time: false
+#    username: '...'
