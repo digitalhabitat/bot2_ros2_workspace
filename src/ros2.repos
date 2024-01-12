@@ -14,3 +14,11 @@ repositories:
     type: git
     url: https://github.com/digitalhabitat/blink1_ros2.git
     version: humble-dev
+  emlid_reach_ros2:
+    type: git
+    url: git@github.com:digitalhabitat/emlid_reach_ros2.git
+    version: humble
+  serial-ros2:
+    type: git
+    url: https://github.com/RoverRobotics-forks/serial-ros2.git
+    version: master

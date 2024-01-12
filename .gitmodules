@@ -11,3 +11,11 @@
 	path = src2/blink1-tool
 	url = https://github.com/todbot/blink1-tool.git
 	branch = main
+[submodule "src/emlid_reach_ros2"]
+	path = src/emlid_reach_ros2
+	url = git@github.com:digitalhabitat/emlid_reach_ros2.git
+	branch = humble
+[submodule "src/serial-ros2"]
+	path = src/serial-ros2
+	url = https://github.com/RoverRobotics-forks/serial-ros2.git
+	branch = master
