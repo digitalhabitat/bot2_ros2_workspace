@@ -19,3 +19,7 @@
 	path = src/serial-ros2
 	url = https://github.com/RoverRobotics-forks/serial-ros2.git
 	branch = master
+[submodule "src/nmea_msgs"]
+	path = src/nmea_msgs
+	url = https://github.com/ros-drivers/nmea_msgs.git
+	branch = ros2

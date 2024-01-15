@@ -22,3 +22,7 @@ repositories:
     type: git
     url: https://github.com/RoverRobotics-forks/serial-ros2.git
     version: master
+  nmea_msgs:
+    type: git
+    url: https://github.com/ros-drivers/nmea_msgs.git
+    version: ros2
