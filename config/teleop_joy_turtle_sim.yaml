@@ -1,0 +1,40 @@
+# https://github.com/ros-teleop/teleop_tools/blob/master/joy_teleop/config/joy_teleop_example.yaml
+joy_teleop:
+  ros__parameters:
+    # Logitech Gamepad F310 using left joystick, Right trigger, with A, B, deadman button
+    # start button clears lines
+    forward_drive:
+      type: topic
+      interface_type: geometry_msgs/msg/Twist
+      topic_name: cmd_vel
+      deadman_buttons: [0] # A Button
+      axis_mappings:
+        linear-x: # output = scale*sensor + offset (default axis move from 1 to -1)
+          axis: 5 # RT button, 
+          scale: -2.0 
+          offset: 2.0
+        angular-z:
+          axis: 0 # Left joystick
+          scale: 3.0
+          offset: 0.0
+    reverse_drive:
+      type: topic
+      interface_type: geometry_msgs/msg/Twist
+      topic_name: cmd_vel
+      deadman_buttons: [1] # B Button
+      axis_mappings:
+       linear-x: # output = scale*sensor + offset (default axis move from 0 to -1)
+         axis: 5 # RT Button
+         scale: 1.0
+         offset: -1.0
+       angular-z:
+         axis: 0 # Left joystick
+         scale: 3.0
+         offset: 0.0
+
+
+    clear:
+      type: service
+      interface_type: std_srvs/srv/Empty
+      service_name: clear
+      buttons: [7]
