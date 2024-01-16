@@ -3,6 +3,8 @@
 # Install udev rules on host machine with to enable executables
 # that acceses USB devices to be ran without sudo
 
+# See directory udev-rules
+
 err() {
   echo "[ERROR] [$(date +'%Y-%m-%dT%H:%M:%S%z')]: $*" >&2
 }

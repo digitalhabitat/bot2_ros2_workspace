@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://design.ros2.org/articles/roslaunch_xml.html -->
+<!-- https://docs.ros.org/en/humble/How-To-Guides/Launch-files-migration-guide.html#rosparam -->
+<launch>
+
+    <node pkg="roboclaw" exec="roboclaw_node" name="roboclaw" output="screen">
+        <param name="serial_port" value="/dev/ttyACM0"/>
+    </node>
+
+    <node pkg="roboclaw" exec="diffdrive_node" name="diffdrive" output="screen">
+        <param name="roboclaws" value="1"/>
+        <param name="steps_per_meter" value="74659.37"/>
+        <param name="base_width" value="0.350"/>
+        <param name="swap_motors" value="false"/>
+        <remap from="/motor_cmd_vel" to="/roboclaw/claw0/motor_vel_cmd"/>
+    </node>
+
+</launch>
