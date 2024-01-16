@@ -1,16 +1,30 @@
 #!/bin/bash 
 
-# udev rules must be installed on host machine with USB device
-# this enables executables that acceses USB devices to be ran without sudo
+# Install udev rules on host machine with to enable executables
+# that acceses USB devices to be ran without sudo
+
+err() {
+  echo "[ERROR] [$(date +'%Y-%m-%dT%H:%M:%S%z')]: $*" >&2
+}
+
+# Check if running inside a Docker container
+if [ "$(systemd-detect-virt --container)" == "docker" ]; then
+  err "Running inside a Docker container."
+  err "Installation Failed: This script is intended to be executed " \
+  "on the host machine, not within a container. Execute it outside " \
+  "the container environment to install udev rules properly."
+  exit 1
+fi
 
 # Check if the script is run with sudo
 if [ "$EUID" -ne 0 ]; then
-    echo "Please run this script with sudo or as root."
+    err "Please run this script with sudo or as root."
     exit 1
 fi
 
 # Define the source and destination directories
-dirSource="/home/bot/bot2_ros2_workspace/udev-rules"
+dir="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
+dirSource="$dir/udev-rules"
 dirTarget="/etc/udev/rules.d"
 
 printf "Source Directory: $dirSource\n"
@@ -18,15 +32,17 @@ printf "Target Directory: $dirTarget\n\n"
 
 # Check if the source directory exists
 if [ ! -d "$dirSource" ]; then
-    echo "Source directory $dirSource does not exist."
+    err "Source directory $dirSource does not exist."
     exit 1
 fi
 
 # Check if the destination directory exists
 if [ ! -d "$dirTarget" ]; then
-    echo "Source directory $dirTarget does not exist."
+    err "Source directory $dirTarget does not exist."
     exit 1
 fi
+
+# cp "$dirSource"/*.rules "$dirTarget"
 
 # Loop through files in source directory
 for file in $dirSource/*.rules; do
@@ -47,7 +63,7 @@ for file in $dirSource/*.rules; do
     fi
 done
 
-sudo udevadm control --reload 
-sudo udevadm trigger 
+sudo udevadm control --reload-rules
+sudo udevadm trigger --subsystem-match=tty
 
 printf "\nudev rules have been reloaded and triggered\n"

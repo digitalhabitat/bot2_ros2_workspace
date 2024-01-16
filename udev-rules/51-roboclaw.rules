@@ -1,4 +1,4 @@
 # Copy this udev with "sudo cp 51-roboclaw.rules /etc/udev/rules.d/"
 # When done, do "sudo udevadm control --reload && sudo udevadm trigger"
 # Edit it to suit your type of Linux. It's currently set up for modern Ubuntu
-ATTRS{idProduct}=="2404", ATTRS{idVendor}=="03eb", MODE:="666", GROUP="plugdev"
+SUBSYSTEM=="tty", ATTRS{manufacturer}=="Basicmicro Inc.", ATTRS{product}=="USB Roboclaw 2x30A", MODE="666", SYMLINK+="roboclaw"
