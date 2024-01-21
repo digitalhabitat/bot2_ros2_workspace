@@ -26,7 +26,3 @@ repositories:
     type: git
     url: https://github.com/ros-drivers/nmea_msgs.git
     version: ros2
-  roboclaw:
-    type: git
-    url: https://github.com/ProjectLadon/roboclaw.git
-    version: master

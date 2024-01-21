@@ -23,7 +23,3 @@
 	path = src/nmea_msgs
 	url = https://github.com/ros-drivers/nmea_msgs.git
 	branch = ros2
-[submodule "src/roboclaw"]
-	path = src/roboclaw
-	url = https://github.com/ProjectLadon/roboclaw.git
-	branch = master
