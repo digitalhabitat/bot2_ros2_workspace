@@ -4,7 +4,7 @@
 <launch>
 
     <node pkg="roboclaw" exec="roboclaw_node" name="roboclaw" output="screen">
-        <param name="serial_port" value="/dev/ttyACM0"/>
+        <param name="serial_port" value="/dev/roboclaw"/>
     </node>
 
     <node pkg="roboclaw" exec="diffdrive_node" name="diffdrive" output="screen">

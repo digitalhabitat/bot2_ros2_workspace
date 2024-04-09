@@ -23,3 +23,12 @@
 	path = src/nmea_msgs
 	url = https://github.com/ros-drivers/nmea_msgs.git
 	branch = ros2
+[submodule "src/roboclaw_hardware_interface"]
+	path = src/roboclaw_hardware_interface
+	url = https://github.com/dumbotics/roboclaw_hardware_interface.git
+[submodule "src/roboclaw_serial"]
+	path = src/roboclaw_serial
+	url = https://github.com/dumbotics/roboclaw_serial.git
+[submodule "src/dumbot_bringup"]
+	path = src/dumbot_bringup
+	url = https://github.com/dumbotics/dumbot_bringup.git

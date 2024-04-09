@@ -18,8 +18,14 @@ RUN apt-get update \
    # MTM: joystick teleop test
    joystick jstest-gtk evtest \ 
    ros-humble-joy \
-   ros-humble-teleop-twist-joy\
+   ros-humble-joy-teleop \
+   ros-humble-teleop-twist-joy \
    ros-humble-turtlesim \
+   # MTM: roboclaw dev tools
+   libserial-dev \
+   ros-humble-differential \
+   ros-humble-diff-drive-controller \
+   ros-humble-joint-state-broadcaster \
    # MTM: RTK GNSS NTRIP Client Node (RTKLIB str2str)
    ros-humble-ntrip-client \
    # MTM: RTK GNSS Reciever Device Node

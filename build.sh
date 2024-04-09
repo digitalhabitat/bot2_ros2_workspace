@@ -16,7 +16,7 @@ echo "Parallel workers: $PARALLEL_WORKERS"
 
 colcon build \
         --base-path "./src" \
-        --packages-select "roboclaw" \
+        --packages-select "roboclaw_serial" "roboclaw_hardware_interface" "dumbot_bringup" \
         --merge-install \
         --symlink-install \
         --parallel-workers $PARALLEL_WORKERS \
