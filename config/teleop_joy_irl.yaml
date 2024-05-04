@@ -3,19 +3,22 @@ joy_teleop:
   ros__parameters:
     # Logitech Gamepad F310 using left joystick, Right trigger, with A, B, deadman button
     # start button clears lines
+    # Usage:
+    # A button for forward drive (max speed 0.06 m/s = 0.2 ft/s = 0.13 mph)
+    # B button for reverse drive (max speed 0.06 m/s = 0.2 ft/s = 0.13 mph)
     forward_drive:
       type: topic
       interface_type: geometry_msgs/msg/Twist
       topic_name: diffbot_base_controller/cmd_vel_unstamped
       deadman_buttons: [0] # A Button
       axis_mappings:
-        linear-x: # output = scale*sensor + offset (default axis move from 1 to -1)
+        linear-x: # output = scale*axis_sensor + offset (default sensor moves from 1 to -1)
           axis: 5 # RT button, 
-          scale: -2.0 
-          offset: 2.0
+          scale: -0.06 
+          offset: 0.06
         angular-z:
           axis: 0 # Left joystick
-          scale: 3.0
+          scale: 0.2
           offset: 0.0
     reverse_drive:
       type: topic
@@ -23,13 +26,13 @@ joy_teleop:
       topic_name: diffbot_base_controller/cmd_vel_unstamped
       deadman_buttons: [1] # B Button
       axis_mappings:
-       linear-x: # output = scale*sensor + offset (default axis move from 0 to -1)
+       linear-x: # output = scale*axis_sensor + offset (default sensor move from 1 to -1)
          axis: 5 # RT Button
-         scale: 1.0
-         offset: -1.0
+         scale: 0.06
+         offset: -0.06
        angular-z:
          axis: 0 # Left joystick
-         scale: 3.0
+         scale: -0.2
          offset: 0.0
 
 

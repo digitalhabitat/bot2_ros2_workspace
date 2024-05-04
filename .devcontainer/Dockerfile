@@ -26,6 +26,7 @@ RUN apt-get update \
    ros-humble-differential \
    ros-humble-diff-drive-controller \
    ros-humble-joint-state-broadcaster \
+   ros-humble-controller-manager \
    # MTM: RTK GNSS NTRIP Client Node (RTKLIB str2str)
    ros-humble-ntrip-client \
    # MTM: RTK GNSS Reciever Device Node

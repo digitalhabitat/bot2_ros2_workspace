@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- based on dumbot -->
+<!-- LINK src/dumbot_bringup/urdf/roboclaw.urdf.xacro -->
+<!-- Basic differential drive mobile base -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="dumbot">
+
+  <!--arg name="roboclaw_description_path" default="$(dirname)/roboclaw_description.urdf.xacro"/-->
+  <!--xacro:include filename="$(var roboclaw_description_path)"/-->
+
+  <xacro:include filename="roboclaw_description.urdf.xacro" />
+
+  <!-- Import Rviz colors -->
+  <xacro:include filename="roboclaw.materials.xacro" />
+
+  <!-- Import dumbot ros2_control description -->
+  <xacro:include filename="roboclaw.ros2_control.xacro" />
+
+  <xacro:dumbot_base />
+
+  <xacro:diffbot_ros2_control
+    name="roboclaw_controller" />
+
+</robot>
