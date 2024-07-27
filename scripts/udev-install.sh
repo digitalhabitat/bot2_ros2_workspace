@@ -25,8 +25,8 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Define the source and destination directories
-dir="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
-dirSource="$dir/udev-rules"
+dir="$(cd -P -- "$(dirname -- "$0")" && pwd -P)" # abs. path of this script file
+dirSource="$dir/../udev-rules"
 dirTarget="/etc/udev/rules.d"
 
 printf "Source Directory: $dirSource\n"
@@ -55,14 +55,9 @@ for file in $dirSource/*.rules; do
     # Extract the filename without the path
     filename=$(basename "$file")
 
-    # Check if the file exists in target directory
-    if [ -e "$dirTarget/$filename" ]; then
-        echo "File $filename is already present in $dirTarget."
-    else
-        # If the file doesn't exist, copy it to directory B
-        cp "$file" "$dirTarget"
-        echo "File $filename copied to $dirTarget."
-    fi
+     # Copy file to directory
+    cp "$file" "$dirTarget"
+    echo "File $filename copied to $dirTarget."
 done
 
 sudo udevadm control --reload-rules

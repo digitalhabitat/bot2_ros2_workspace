@@ -32,3 +32,7 @@
 [submodule "src/dumbot_bringup"]
 	path = src/dumbot_bringup
 	url = https://github.com/dumbotics/dumbot_bringup.git
+[submodule "src/reach_ros_node"]
+	path = src/reach_ros_node
+	url = https://github.com/rpng/reach_ros_node.git
+	branch = ros2

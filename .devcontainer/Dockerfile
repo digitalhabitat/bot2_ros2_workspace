@@ -29,8 +29,21 @@ RUN apt-get update \
    ros-humble-controller-manager \
    # MTM: RTK GNSS NTRIP Client Node (RTKLIB str2str)
    ros-humble-ntrip-client \
+   # MTM: (RTKLIB str2str)
+   rtklib \
    # MTM: RTK GNSS Reciever Device Node
    ros-humble-nmea-navsat-driver \
+   # Global Positioning System - daemon
+   gpsd \
+   # MTM: connects to a GPSd server and broadcasts GPS fixes using the NavSatFix message plus more
+   ros-humble-gpsd-client \
+   ros-humble-gps-tools \
+   ros-humble-gps-umd \ 
+   # Basic Networking Tools
+   netcat \
+   net-tools \
+   iproute2 \
+   iputils-ping \
    # MTM: dev tools
     ros-humble-rqt-graph \
    # Clean up

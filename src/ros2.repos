@@ -26,3 +26,7 @@ repositories:
     type: git
     url: https://github.com/ros-drivers/nmea_msgs.git
     version: ros2
+  reach_ros_node:
+    type: git
+    url: https://github.com/rpng/reach_ros_node.git
+    version: ros2
