@@ -23,7 +23,7 @@ RUN apt-get update \
    ros-humble-turtlesim \
    # MTM: roboclaw dev tools
    libserial-dev \
-   ros-humble-differential \
+   #ros-humble-differential \
    ros-humble-diff-drive-controller \
    ros-humble-joint-state-broadcaster \
    ros-humble-controller-manager \
