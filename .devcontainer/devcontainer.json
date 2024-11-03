@@ -18,7 +18,10 @@
 		// uncomment to use intel iGPU
 		// "--device=/dev/dri"
 		// MTM: enable privileged to access the USB host controllers
-		"--privileged"
+		"--privileged",
+		// Forward SSH agent running on host machine
+		"--volume=${env:SSH_AUTH_SOCK}:/ssh-agent",
+		"--env", "SSH_AUTH_SOCK=/ssh-agent"
 	],
 	"mounts": [
 		// MTM: mount /dev to acess joystick and other devices
