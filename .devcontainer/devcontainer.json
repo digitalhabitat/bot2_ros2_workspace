@@ -20,6 +20,9 @@
 		// MTM: enable privileged to access the USB host controllers
 		"--privileged",
 		// Forward SSH agent running on host machine
+		// `git remote -v` should return `git@github.com:digitalhabitat/bot2_ros2_workspace.git`
+		// else `git remote set-url origin git@github.com:digitalhabitat/bot2_ros2_workspace.git`
+		// Check with `ssh -T git@github.com`
 		"--volume=${env:SSH_AUTH_SOCK}:/ssh-agent",
 		"--env", "SSH_AUTH_SOCK=/ssh-agent"
 	],
